@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@300;400;500;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style/style.css">
+	<title>ThinksReal</title>
+</head>
+<body>
+	<div class="formAdd">
+		<form action="" method="post" id="form">
+			<div class="headerDiv">
+				<img class="svgArrow" src="img/leftarrow.svg" alt="GoBack">
+				<p class="formHeaderP">Создание товара</p>
+
+				<input type="submit" class="share" value="Поделиться">
+			</div>
+			<div class="dragPics">
+				<img src="img/pictures.svg" alt="pics" id="picsSvg">
+				<p class="footnote">Перетащите сюда файл</p>
+				<input id="selectFileButton" type="file" accept=".jpg,.jpeg,.png">
+				<label for="selectFileButton" class="selectFileButton-label">Выбрать с комьютера</label>
+			</div>
+			<div id="formBr"></div>
+			<div class="formDescription">
+				<div class="formUserData">
+					<img src="img/userphoto.png" alt="user photo" class="userPhoto">
+					<span class="nickname">seleznev34</span>
+				</div>
+				<textarea placeholder="Придумайте описание..." class=description required></textarea>
+				<p class="disclaimer">Поле должно быть заполнено</p>
+			</div>
+		</form>
+	</div>
+	<script src="/scripts/frontend.js"></script>
+</body>
+</html>
