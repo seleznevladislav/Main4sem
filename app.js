@@ -3,17 +3,15 @@ const path = require('path');
 const app = express();
 const date = new Date();
 const PORT = process.env.PORT || 3000;
-let INFORMATION = {}
+let INFORMATION = []
 
-
-let fileContent = fs.readFileSync('./images/images.txt', 'utf8')
-
-
+app.use('/api', require('./routes/uploadRoute'))
 app.use(express.static(path.resolve(__dirname, 'client')))
-app.use(express.json());
+app.use('/images', express.static(path.join(__dirname, 'images')))
+app.use(express.json( { extended: true }));
 
 app.get('/api/images', (req,res)=>{
-	res.status(200).json(fileContent);
+	res.status(200).json(INFORMATION);
 })
 
 app.post('/api/images', (req, res)=>{

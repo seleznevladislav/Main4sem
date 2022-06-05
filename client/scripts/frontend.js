@@ -11,9 +11,10 @@ const data = {}
 submitBtn.addEventListener('click', (e)=>sendInfo(e))
 
 async function sendInfo(e) {
-	e.preventDefault()
+	
 	const PushInfo = await request('/api/images', 'POST', data)
-	console.log('send: ',PushInfo)	
+	// const answer = await sendFile('/api/upload', files)
+	//console.log('send: ', PushInfo)	
 }
 
 
@@ -41,11 +42,11 @@ async function Upload() {
 	fileOpenBtn.addEventListener('change', fileUpload)
 
 
-	function fileUpload(event) {
+	async function fileUpload(event) {
 		const files = Array.from(event.target.files)
 		headerDiv.insertAdjacentElement('afterend', preview)
 		const dragPicsDiv = document.querySelector('.dragPics')
-		console.log(files)
+		console.log(event.target.files)
 		data.imgName = files[0].name
 		data.imgSize = files[0].size
 		dragPicsDiv.style.display = 'none'
@@ -85,9 +86,8 @@ async function Upload() {
 			}
 			preview.style.backgroundColor = 'rgb(0,0,0, .9)'
 			reader.readAsDataURL(file)
-			
-			
 		})
+	 
 	}
 }
 

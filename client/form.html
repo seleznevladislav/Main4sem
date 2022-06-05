@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div class="formAdd">
-		<form action="" method="post" id="form">
+		<form action="/api/upload" method="post" id="form" enctype="multipart/form-data">
 			<div class="headerDiv">
 				<img class="svgArrow" src="img/leftarrow.svg" alt="GoBack">
 				<p class="formHeaderP">Создание товара</p>
@@ -22,7 +22,7 @@
 			<div class="dragPics">
 				<img src="img/pictures.svg" alt="pics" id="picsSvg">
 				<p class="footnote">Перетащите сюда файл</p>
-				<input id="selectFileButton" type="file" accept=".jpg,.jpeg,.png">
+				<input id="selectFileButton" type="file" name="avatar"  accept=".jpg,.jpeg,.png">
 				<label for="selectFileButton" class="selectFileButton-label">Выбрать с комьютера</label>
 			</div>
 			<div id="formBr"></div>
